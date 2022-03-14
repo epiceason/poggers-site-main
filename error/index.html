@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        html,
+        body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            place-items: center;
+            background: linear-gradient(-45deg, #d7e1ec, #d52323, #c54863);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+    </style>
+
+    <script>
+        var timeleft = 10;
+        var Timer = setInterval(function(){
+            timeleft--;
+            document.getElementById("redirect").textContent = "Redirecting in " + timeleft + " seconds";
+            if (timeleft <= 0) {
+                clearInterval(Timer);
+                window.location.replace("https://beta.eason.ga/");
+            }
+        },1000);
+    </script>
+
+    <head>
+        <title>Poggers | Error</title>
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="information-title" style="margin-top: 50px; font-size: 50px; font-weight: bold; text-align: center;">Error</div>
+            <div class="information-description" style="font-size: 20px; text-align: center;">An error has occured, Redirecting to homepage</div>
+            <div class="information-description-2" style="font-size: 15px; text-align: center;"><span id="redirect">Waiting for service worker...</span></div>
+        </div>
+    </body>
+
+    <footer style="font-size: 18px; text-align: center;">
+        Made with ❤️ by Eason, Powered by Github Pages<br>
+        <div style="color: #3a3a3a;">
+            <a href="/privacypolicy" style="text-decoration: none; color: #3a3a3a;">Privacy Policy</a>  |  
+            <a href="mailto:support@eason.ga" style="text-decoration: none; color: #3a3a3a;">Contact</a>  |  
+            <a href="/about" style="text-decoration: none; color: #3a3a3a;">About Me</a>
+        </div>
+    </footer>
+    
+    <script>
+        window.onload = secureConnection()
+    </script>
+</html>
