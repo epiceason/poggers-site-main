@@ -110,3 +110,10 @@ body {
   background-color: #de463b;
   color: #ffffff;
 }
+
+.wrapper .osu:hover,
+.wrapper .osu:hover .tooltip,
+.wrapper .osu:hover .tooltip::before {
+  background-color: #cc4698;
+  color: #ffffff;
+}
