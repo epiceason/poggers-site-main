@@ -1,22 +1,5 @@
-.gameimage-1 {
-    background: linear-gradient(-45deg, #e01414, #fa8c8c, #fd5b5b);
-    background-size: 400% 400%;
-    border-radius: 10px;
-    animation: gradient 15s ease infinite;
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(77, 77, 77);
-    margin: 10px;
-    transition: all 0.2s ease;
-}
-
-.gameimage-1:hover {
-    border-color: rgb(255, 255, 255);
-    transition: all 0.5s ease;
-}
-
 .gameimage-2 {
-    background: linear-gradient(-45deg, #14e062, #8cfab1, #6efd5b);
+    background: linear-gradient(-45deg, #eaf4ff, #2cc7ff, #2affcd);
     background-size: 400% 400%;
     border-radius: 10px;
     animation: gradient 15s ease infinite;
@@ -25,29 +8,15 @@
     border-color: rgb(77, 77, 77);
     margin: 10px;
     transition: all 0.2s ease;
+    opacity: 50%;
 }
 
 .gameimage-2:hover {
     border-color: rgb(255, 255, 255);
     transition: all 0.5s ease;
+    opacity: 100%;
 }
 
-.gameimage-3 {
-    background: linear-gradient(-45deg, #e0cb14, #f8fa8c, #fddf5b);
-    background-size: 400% 400%;
-    border-radius: 10px;
-    animation: gradient 15s ease infinite;
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(77, 77, 77);
-    margin: 10px;
-    transition: all 0.2s ease;
-}
-
-.gameimage-3:hover {
-    border-color: rgb(255, 255, 255);
-    transition: all 0.5s ease;
-}
 
 @keyframes gradient {
     0% {background-position: 0% 50%;}

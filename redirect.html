@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Poggers | Redirect</title>
+</head>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const code = urlParams.get('code')
+    
+    async function redirect() {
+
+            if (code === "rickroll") {
+                window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                return
+            } else {
+                window.location.replace("/")
+            }
+
+    }
+    window.onload = redirect()
+</script>
