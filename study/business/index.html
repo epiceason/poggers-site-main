@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <meta content="Study | Business" property="og:title" />
+    <meta content="The only place where i can put my business notes, which are not really mine." property="og:description" />
+    <meta content="https://www.eason.ga/study" property="og:url" />
+    <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+
+    <head>
+        <title>Business | Poggers: Study</title>
+        <link rel="stylesheet" href="/style-study.css">
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="sidenav">
+            <h1>Poggers: Study</h1>
+            <a href="/study/">Home</a>
+            <hr style="width:50%; text-align:center; margin-left: 12%; margin-top: 10px; margin-bottom: 10px;">
+            <a href="/study/chinese/">Chinese</a>
+            <a href="/study/malay/">Malay</a>
+            <a href="/study/english/">English</a> 
+            <a href="/study/math/">Math</a>
+            <a href="/study/bookkeeping/">Bookkeeping</a>
+            <a href="/study/business/" style="color: rgb(255, 243, 70)">Business</a> 
+            <a href="/study/geography/">Geography</a> 
+            <a href="/study/history/">History</a>
+            <hr style="width:50%; text-align:center; margin-left: 12%; margin-top: 10px; margin-bottom: 10px;">
+            <a href="/study/extra/">Extra</a>
+        </div>
+
+        <div class="main">
+            <div class="title" style="padding-bottom: 30px;">
+                <h1>Business 商业</h1>
+            </div>
+            <div class="content">
+                <button class="collapsible">📕 | Blank Placeholder</button>
+                <div class="information">
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+        
+</html>
