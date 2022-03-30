@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+    <meta content="Make your own Zhonix Eyes meme" property="og:title" />
+    <meta content="Made in half an hour, janky af" property="og:description" />
+    <meta content="https://www.eason.ga/others/zhonix-eyes" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/803156333486014518/958697188609900544/unknown.png" property="og:image" />
+    <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+
+    <head>
+        <title>Zhonix Meme | Poggers</title>
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+        <script src="/backend/secure.js"></script>
+    </head>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const text = urlParams.get('t')
+
+        async function textonscreen() {
+            if (text !== null) {
+                document.getElementById("text").innerHTML = text;
+            } else {
+                document.getElementById("text").innerHTML = "This is the default text";
+            }
+        }
+        
+        async function textbutton() {
+            var area = document.getElementById("textupdate").value;
+            if (area !== null) {
+                document.getElementById("text").innerHTML = area;
+            } else {
+                document.getElementById("text").innerHTML = "This is the default text";
+            }
+        }
+        
+        async function sharebutton() {
+            var area = document.getElementById("textupdate").value;
+            area = encodeURIComponent(area.trim()) //"Test%20-%20Text"
+            url = "https://www.eason.ga/others/zhonix-eyes?t=" + area;
+            var promise = navigator.clipboard.writeText(url)
+        }
+
+    </script>
+
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .centered {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+
+    <body style="background-color: rgb(0, 0, 0); padding-top: 30vh;" >
+
+        <div class="container">
+            <img src="https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358" alt="Funny Zhonix" style="width: 698px; height: 392px;">
+            <div id="text" class="centered" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">This is the default text</div>
+        </div>
+        <div class="container" style="padding-top: 100px;">
+            <textarea id="textupdate" name="textupdate" rows="1" cols="50" maxlength="50" style="resize: none; font-size: 18px; font-family: sans-serif; "></textarea>
+            <button onclick="textbutton()">Change</button>
+            <button onclick="sharebutton()">Share</button>
+        </div>
+    </body>
+
+    <script>
+        textonscreen();
+    </script>
+</html>
