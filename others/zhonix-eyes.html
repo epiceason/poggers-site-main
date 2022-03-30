@@ -19,7 +19,7 @@
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const text = urlParams.get('t')
+        var text = urlParams.get('t')
         var image = urlParams.get('i')
 
         async function textonscreen() {
@@ -33,12 +33,16 @@
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
             } else if (image == 2) {
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958716402045423666/one.png?width=2414&height=1358";
+            } else if (image == 3) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
+            } else if (image == 4) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
             }
         }
         
         async function textbutton() {
             var area = document.getElementById("textupdate").value;
-            if (area !== null) {
+            if (area !== null || area !== "") {
                 document.getElementById("text").innerHTML = area;
             } else {
                 document.getElementById("text").innerHTML = "This is the default text";
@@ -48,6 +52,12 @@
         async function sharebutton() {
             var area = document.getElementById("textupdate").value;
             area = encodeURIComponent(area.trim()) //"Test%20-%20Text"
+            if (image === null) {
+                image = 1;
+            }
+            if (area === null || area === "") {
+                area = "Default%20Text";
+            }
             url = "https://www.eason.ga/others/zhonix-eyes?t=" + area + "&i=" + image;
             var promise = navigator.clipboard.writeText(url);
             alert("Link copied to clipboard! 📋\n" + url);
@@ -59,6 +69,10 @@
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
             } else if (sel == 2) {
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958716402045423666/one.png?width=2414&height=1358";
+            } else if (sel == 3) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
+            } else if (sel == 4) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
             }
         }
 
@@ -135,7 +149,7 @@
 
     </style>
 
-    <body style="padding-top: 5vh;" >
+    <body style="padding-top: 5vh; padding-bottom: 15vh;" >
 
         <div style="text-align: center;">
             <h1>Make your own zhonix snapchat meme</h1>
@@ -153,8 +167,10 @@
             <div class="dropdown">
                 <button class="dropbtn">Background</button>
                 <div class="dropdown-content">
-                  <a href="#" onclick="backgroundbutton(1)">Zhonix Eyes</a>
-                  <a href="#" onclick="backgroundbutton(2)">Kid Threatened</a>
+                  <a onclick="backgroundbutton(1)">Zhonix Eyes</a>
+                  <a onclick="backgroundbutton(2)">Kid Threatened</a>
+                  <a onclick="backgroundbutton(3)">Khai Xiang Funny</a>
+                  <a onclick="backgroundbutton(4)">Laoye Funny</a>
                 </div>
               </div>
         </div>
