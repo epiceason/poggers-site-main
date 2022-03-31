@@ -44,18 +44,23 @@
                 document.getElementById("text").innerHTML = "This is the default text";
             }
 
-            if (image == 1) {
+            if (image === 1) {
+                customimage = null;
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
-            } else if (image == 2) {
+            } else if (image === 2) {
+                customimage = null;
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958716402045423666/one.png?width=2414&height=1358";
-            } else if (image == 3) {
+            } else if (image === 3) {
+                customimage = null;
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
-            } else if (image == 4) {
+            } else if (image === 4) {
+                customimage = null;
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
             } 
             
-            if (customimage !== null || customimage !== "") {
-                document.getElementById("img").src = customimage
+            if (customimage !== null) {
+                image = null;
+                document.getElementById("img").src = customimage;
             }
         }
         
@@ -77,10 +82,10 @@
             if (area === null || area === "") {
                 area = "Default%20Text";
             }
-            if (customimage !== null || customimage !== "") {
-                url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&ci=" + customimage;
-            } else {
+            if (customimage === null || customimage === "") {
                 url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&i=" + image;
+            } else {
+                url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&ci=" + customimage;
             }
             var promise = navigator.clipboard.writeText(url);
             snackbar("📋 Link copied to clipboard!");
@@ -88,6 +93,7 @@
 
         async function backgroundbutton(sel) {
             image = sel; 
+            customimage = null;
             if (sel == 1) {
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
             } else if (sel == 2) {
@@ -100,6 +106,7 @@
         }
 
         async function customimageget() {
+            image = null;
             customimage = document.getElementById("customimage").value;
             document.getElementById("img").src = customimage;
         }
