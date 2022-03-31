@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="/style.css">
         <link rel="icon" type="image/x-icon" href="/backend/main.ico">
         <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
-        <script src="/backend/secure.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+    </script>
     </head>
 
     <script>
@@ -21,6 +22,17 @@
         const urlParams = new URLSearchParams(queryString);
         var text = urlParams.get('t')
         var image = urlParams.get('i')
+
+        function takeshot() {
+            let div = document.getElementById('photo');
+            html2canvas(div).then(
+                function (canvas) {
+                    document
+                    .getElementById('output')
+                    .appendChild(canvas);
+                })
+            document.getElementById('snap').style.display = 'none';
+        }
 
         async function textonscreen() {
             if (text !== null) {
@@ -159,10 +171,11 @@
             <h2 style="color: #3a4a4a">if you want... somehow</h2>
         </div>
 
-        <div class="container">
+        <div class="container" id="photo">
             <img id="img" src="https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358" alt="Funny Zhonix" style="width: 698px; height: 392px;">
             <div id="text" class="centered" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">This is the default text</div>
         </div>
+
         <div class="container" style="padding-top: 100px;">
             <textarea id="textupdate" name="textupdate" rows="1" cols="50" maxlength="50" style="resize: none; font-size: 18px; font-family: sans-serif; "></textarea>
             <button onclick="textbutton()">Change</button>
@@ -177,6 +190,14 @@
                 </div>
               </div>
         </div>
+
+        <div class="container">
+            <h1>Screenshot result:</h1>
+            <button onclick="takeshot()" id="snap">Screenshot</button>
+            <button onclick="location.reload()" style="background-color: rgb(255, 73, 73)">Reset</button>
+        </div>
+        
+        <div id="output"></div>
     </body>
 
     <script>
