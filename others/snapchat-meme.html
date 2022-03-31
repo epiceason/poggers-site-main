@@ -25,7 +25,7 @@
         var image = urlParams.get('i')
 
         function takeshot() {
-            snackbar("⚠️ This feature fairly new, bugs might occur.");
+            snackbar("❌ This feature is not available!");
             // let div = document.getElementById('photo');
             // html2canvas(div).then(
             //     function (canvas) {
@@ -74,7 +74,7 @@
             }
             url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&i=" + image;
             var promise = navigator.clipboard.writeText(url);
-            alert("Link copied to clipboard! 📋\n" + url);
+            snackbar("📋 Link copied to clipboard!");
         }
 
         async function backgroundbutton(sel) {
@@ -168,6 +168,10 @@
 
     <body style="padding-top: 5vh; padding-bottom: 15vh;" >
 
+        <div id="loader-bg">
+            <div id="loader"></div>
+        </div>
+
         <div style="text-align: center;">
             <h1>Make your own snapchat meme</h1>
             <h2 style="color: #3a4a4a">if you want... somehow</h2>
@@ -179,7 +183,7 @@
         </div>
 
         <div class="container" style="padding-top: 100px;">
-            <textarea id="textupdate" name="textupdate" rows="1" cols="50" maxlength="50" style="resize: none; font-size: 18px; font-family: sans-serif; "></textarea>
+            <input id="textupdate" name="textupdate" type="text" placeholder="What do you want to put today?" maxlength="50" style="border-color: black; border-width: 1.5px; width: 500px; font-size: 20px; font-family: sans-serif; padding: 5px; border-radius: 3px;">
             <button onclick="textbutton()">Change</button>
             <button onclick="sharebutton()">Share</button>
             <div class="dropdown">
@@ -205,6 +209,6 @@
     </body>
 
     <script>
-        textonscreen();
+        textonscreen(), firstLoad();
     </script>
 </html>
