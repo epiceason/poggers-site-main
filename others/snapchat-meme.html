@@ -11,10 +11,11 @@
     <head>
         <title>Snapchat Meme | Poggers</title>
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/style-util.css">
         <link rel="icon" type="image/x-icon" href="/backend/main.ico">
         <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+        <script src="/backend/control.js"></script>
     </head>
 
     <script>
@@ -24,14 +25,15 @@
         var image = urlParams.get('i')
 
         function takeshot() {
-            let div = document.getElementById('photo');
-            html2canvas(div).then(
-                function (canvas) {
-                    document
-                    .getElementById('output')
-                    .appendChild(canvas);
-                })
-            document.getElementById('snap').style.display = 'none';
+            snackbar("⚠️ This feature fairly new, bugs might occur.");
+            // let div = document.getElementById('photo');
+            // html2canvas(div).then(
+            //     function (canvas) {
+            //         document
+            //         .getElementById('output')
+            //         .appendChild(canvas);
+            //     })
+            // document.getElementById('snap').style.display = 'none';
         }
 
         async function textonscreen() {
@@ -198,6 +200,8 @@
         </div>
         
         <div id="output"></div>
+
+        <div id="snackbar"></div>
     </body>
 
     <script>
