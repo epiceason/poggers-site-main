@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+    <meta content="Make your own snapchat meme" property="og:title" />
+    <meta content="Made in half an hour, janky af" property="og:description" />
+    <meta content="https://www.eason.ga/others/zhonix-eyes" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/803156333486014518/958697188609900544/unknown.png" property="og:image" />
+    <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+
+    <head>
+        <title>Snapchat Meme | Poggers</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+        <script src="/backend/secure.js"></script>
+    </head>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        var text = urlParams.get('t')
+        var image = urlParams.get('i')
+
+        async function textonscreen() {
+            if (text !== null) {
+                document.getElementById("text").innerHTML = text;
+            } else {
+                document.getElementById("text").innerHTML = "This is the default text";
+            }
+
+            if (image == 1) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
+            } else if (image == 2) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958716402045423666/one.png?width=2414&height=1358";
+            } else if (image == 3) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
+            } else if (image == 4) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
+            }
+        }
+        
+        async function textbutton() {
+            var area = document.getElementById("textupdate").value;
+            if (area !== null || area !== "") {
+                document.getElementById("text").innerHTML = area;
+            } else {
+                document.getElementById("text").innerHTML = "This is the default text";
+            }
+        }
+        
+        async function sharebutton() {
+            var area = document.getElementById("textupdate").value;
+            area = encodeURIComponent(area.trim()) //"Test%20-%20Text"
+            if (image === null) {
+                image = 1;
+            }
+            if (area === null || area === "") {
+                area = "Default%20Text";
+            }
+            url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&i=" + image;
+            var promise = navigator.clipboard.writeText(url);
+            alert("Link copied to clipboard! 📋\n" + url);
+        }
+
+        async function backgroundbutton(sel) {
+            image = sel; 
+            if (sel == 1) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358";
+            } else if (sel == 2) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958716402045423666/one.png?width=2414&height=1358";
+            } else if (sel == 3) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
+            } else if (sel == 4) {
+                document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
+            }
+        }
+
+    </script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .centered {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            font-family: "Poppins", sans-serif;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    </style>
+
+    <body style="padding-top: 5vh; padding-bottom: 15vh;" >
+
+        <div style="text-align: center;">
+            <h1>Make your own snapchat meme</h1>
+            <h2 style="color: #3a4a4a">if you want... somehow</h2>
+        </div>
+
+        <div class="container">
+            <img id="img" src="https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358" alt="Funny Zhonix" style="width: 698px; height: 392px;">
+            <div id="text" class="centered" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">This is the default text</div>
+        </div>
+        <div class="container" style="padding-top: 100px;">
+            <textarea id="textupdate" name="textupdate" rows="1" cols="50" maxlength="50" style="resize: none; font-size: 18px; font-family: sans-serif; "></textarea>
+            <button onclick="textbutton()">Change</button>
+            <button onclick="sharebutton()">Share</button>
+            <div class="dropdown">
+                <button class="dropbtn">Background</button>
+                <div class="dropdown-content">
+                  <a onclick="backgroundbutton(1)">Zhonix Eyes</a>
+                  <a onclick="backgroundbutton(2)">Kid Threatened</a>
+                  <a onclick="backgroundbutton(3)">Khai Xiang Funny</a>
+                  <a onclick="backgroundbutton(4)">Laoye Funny</a>
+                </div>
+              </div>
+        </div>
+    </body>
+
+    <script>
+        textonscreen();
+    </script>
+</html>
