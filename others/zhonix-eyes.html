@@ -9,6 +9,7 @@
     const urlParams = new URLSearchParams(queryString);
     var picture = urlParams.get('i')
     var text = urlParams.get('t')
+    var customimage = urlParams.get('ci')
     
     async function redirect() {
 
@@ -20,7 +21,11 @@
             text = "You%20Forgot%20To%20Add%20Text%20To%20Your%20Meme"
         }
 
-        window.location.replace("./snapchat-meme?t=" + text + "&i=" + picture);
+        if (customimage === null || customimage === "") {
+            window.location.replace("./snapchat-meme?t=" + text + "&i=" + picture);
+        } else { 
+            window.location.replace("./snapchat-meme?t=" + text + "&ci=" + picture);
+        }
 
     }
     window.onload = redirect()
