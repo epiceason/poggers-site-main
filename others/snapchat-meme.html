@@ -5,7 +5,7 @@
     <meta content="Make your own snapchat meme" property="og:title" />
     <meta content="Made in half an hour, janky af" property="og:description" />
     <meta content="https://www.eason.ga/others/zhonix-eyes" property="og:url" />
-    <meta content="https://media.discordapp.net/attachments/803156333486014518/958697188609900544/unknown.png" property="og:image" />
+    <meta content="https://cdn.discordapp.com/attachments/952160394191974430/958945001553936404/k.png" property="og:image" />
     <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
 
     <head>
@@ -23,6 +23,7 @@
         const urlParams = new URLSearchParams(queryString);
         var text = urlParams.get('t')
         var image = urlParams.get('i')
+        var customimage = urlParams.get('ci')
 
         function takeshot() {
             snackbar("❌ This feature is not available!");
@@ -31,7 +32,7 @@
             //     function (canvas) {
             //         document
             //         .getElementById('output')
-            //         .appendChild(canvas);
+            //         .appendChild(canvas);    
             //     })
             // document.getElementById('snap').style.display = 'none';
         }
@@ -51,6 +52,10 @@
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958721507461320754/sdad.png?width=2414&height=1358";
             } else if (image == 4) {
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
+            } 
+            
+            if (customimage !== null || customimage !== "") {
+                document.getElementById("img").src = customimage
             }
         }
         
@@ -65,14 +70,18 @@
         
         async function sharebutton() {
             var area = document.getElementById("textupdate").value;
-            area = encodeURIComponent(area.trim()) //"Test%20-%20Text"
+            area = encodeURIComponent(area.trim())
             if (image === null) {
                 image = 1;
             }
             if (area === null || area === "") {
                 area = "Default%20Text";
             }
-            url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&i=" + image;
+            if (customimage !== null || customimage !== "") {
+                url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&ci=" + customimage;
+            } else {
+                url = "https://www.eason.ga/others/snapchat-meme?t=" + area + "&i=" + image;
+            }
             var promise = navigator.clipboard.writeText(url);
             snackbar("📋 Link copied to clipboard!");
         }
@@ -88,6 +97,11 @@
             } else if (sel == 4) {
                 document.getElementById("img").src = "https://media.discordapp.net/attachments/952160394191974430/958723037715398677/dsada.png?width=2414&height=1358";
             }
+        }
+
+        async function customimageget() {
+            customimage = document.getElementById("customimage").value;
+            document.getElementById("img").src = customimage;
         }
 
     </script>
@@ -179,7 +193,7 @@
 
         <div class="container" id="photo">
             <img id="img" src="https://media.discordapp.net/attachments/952160394191974430/958703613126012968/unknown.png?width=2414&height=1358" alt="Funny Zhonix" style="width: 698px; height: 392px;">
-            <div id="text" class="centered" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">This is the default text</div>
+            <div id="text" class="centered" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: rgba(0, 0, 0, 0.644); width: 698px; height: 40px; padding-top: 8px;">This is the default text</div>
         </div>
 
         <div class="container" style="padding-top: 100px;">
@@ -195,6 +209,11 @@
                   <a onclick="backgroundbutton(4)">Laoye Funny</a>
                 </div>
               </div>
+        </div>
+
+        <div class="container">
+            <h2>Additional features:</h2>
+            <input id="customimage" name="customimage" type="text" placeholder="Custom image (Insert link)" maxlength="200" style="border-color: black; border-width: 1.5px; width: 500px; font-size: 20px; font-family: sans-serif; padding: 5px; border-radius: 3px;"> <button onclick="customimageget()">Update</button>
         </div>
 
         <div class="container">
