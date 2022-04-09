@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>They don't know | Poggers</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+    <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+
+<style>
+    button {
+        background-color: #f5f5f5;
+        border: none;
+        border-radius: 5px;
+        color: #000000;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div style="font-weight: bold; text-align: center; font-size: 20px;">
+        Sorry, you don't really have the password to that piece of garbage page.<br>
+        <input id="textupdate" name="textupdate" type="text" placeholder="Guess the password and try again..." maxlength="20" style="border-color: black; border-width: 1.5px; width: 500px; font-size: 20px; font-family: sans-serif; padding: 5px; border-radius: 3px;"><br>
+        <button onclick='window.location.replace("they-dont-know?pass=" + document.getElementById("textupdate").value)'>Try again</button>
+    </div>
+</body>
