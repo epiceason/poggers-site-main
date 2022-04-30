@@ -42,3 +42,11 @@ body {
 .information {
   padding-top: 1vh;
 }
+
+#loader-bg {
+  background-color: rgba(0, 0, 0, 0.89);
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  z-index: 68;
+}

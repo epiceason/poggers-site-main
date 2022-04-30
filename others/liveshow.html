@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+    <meta content="Liveshow" property="og:title" />
+    <meta content="Better than that shit they made in 20 seconds, i made this in 2 minutes." property="og:description" />
+    <meta content="https://www.eason.ga/others/liveshow" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/803156333486014518/958697188609900544/unknown.png" property="og:image" />
+    <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+
+    <head>
+        <title>Liveshow | Poggers</title>
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
+        html,
+        body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            text-shadow: 0 0 3px #ffffff;
+            place-items: center;
+            background-image: url("https://media.discordapp.net/attachments/952160394191974430/969852890896269342/dddadad.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #coverbg {
+            background-color: rgba(236, 236, 236, 0);
+            width: 200%;
+            height: 200%;
+            position: fixed;
+            z-index: 68;
+        }
+    </style>
+
+    <body>
+        <div id="coverbg"></div>
+        <div class="countdown" style="text-align: center;">
+            <div id="title" style="font-size: 70px;">🕒</div>
+            <div id="countdown" style="font-size: 40px;">Timer module loading...</div> 
+
+            <div id="information" style="font-size: 25px;">即将开始 Upcoming: <b>None</b></div>
+    </body>
+
+    <script>
+
+        // Configuration
+        var countDownDate = new Date("4/30/2022 3:30 PM").getTime();
+        var scheduledEvent = "Better than pinhwa test 1";
+        var scheduledEventLink = "https://youtube.com/watch?v=dQw4w9WgXcQ";
+
+        // Math and shit
+        var x = setInterval(function() {
+
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            if (distance < -2000){
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "活动正在进行 Event is ongoing!";
+                window.location.replace(scheduledEventLink);
+            } else {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "暂时没有任何活动 There is no upcoming events!";
+            }
+        } else {
+            document.getElementById("information").innerHTML = "即将开始 Upcoming: <b>" + scheduledEvent + "</b>";
+        }
+        }, 1000);
+    </script>
+
+</html>
