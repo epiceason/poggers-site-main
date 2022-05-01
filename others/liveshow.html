@@ -71,7 +71,7 @@
         + minutes + "m " + seconds + "s ";
 
         if (distance < 0) {
-            if (distance < -2000){
+            if (distance > -2000){
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "活动正在进行 Event is ongoing!";
                 window.location.replace(scheduledEventLink);
