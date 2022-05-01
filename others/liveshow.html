@@ -13,49 +13,76 @@
         <link rel="icon" type="image/x-icon" href="/backend/main.ico">
         <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="/backend/confetti.js"></script>
     </head>
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         html,
         body {
-            display: grid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 100%;
             width: 100%;
             font-family: "Poppins", sans-serif;
             text-shadow: 0 0 3px #ffffff;
             place-items: center;
-            background-image: url("https://github.com/easonuwu/poggers-site-main/blob/master/backend/liveshowbg.png?raw=true");
+            /* background-image: url("https://github.com/easonuwu/poggers-site-main/blob/master/backend/liveshowbg.png?raw=true");
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: 100% 100%; */
+            background: linear-gradient(-45deg, #ecd7d7, #d52323, #a523d5);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
         }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
 
         #coverbg {
             background-color: rgba(236, 236, 236, 0);
-            width: 200%;
-            height: 200%;
+            width: 100%;
+            height: 100%;
             position: fixed;
             z-index: 68;
         }
     </style>
 
     <body>
-        <div id="coverbg"></div>
+        <div id="coverbg" onclick="window.location.replace('?s=full')" style="background-color: rgba(255, 255, 255, 0.765); text-align: center; padding-top: 25%; font-size: 35px;">Click on the page for the full experience<br>This message will automatically dissappear</div>
+
+        <audio id="player" autoplay loop>
+            <source src="/backend/music.mp3" type="audio/mp3">
+        </audio>
+
         <div class="countdown" style="text-align: center;">
             <div id="title" style="font-size: 70px;">🕒</div>
             <div id="countdown" style="font-size: 40px;">Timer module loading...</div> 
 
             <div id="information" style="font-size: 25px;">即将开始 Upcoming: <b>None</b></div>
+            <div id="information_2" style="font-size: 25px;"></div>
+        </div>    
+        
     </body>
 
     <script>
 
         // Configuration
-        var countDownDate = new Date("4/30/2022 3:30 PM").getTime();
-        var scheduledEvent = "Better than pinhwa test 1";
-        var scheduledEventLink = "https://youtube.com/watch?v=dQw4w9WgXcQ";
+        var countDownDate = new Date("6/2/2022 12:00 AM").getTime();
+        var scheduledEvent = "Chan chan ai chiki chiki ban ban";
+        var additionalInformation = "";
+        var scheduledEventLink = "https://www.youtube.com/watch?v=gNn9NxZH2Vo";
 
         // Math and shit
         var x = setInterval(function() {
@@ -74,15 +101,43 @@
             if (distance > -2000){
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "活动正在进行 Event is ongoing!";
+                document.getElementById("information_2").innerHTML = additionalInformation;
                 window.location.replace(scheduledEventLink);
             } else {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "暂时没有任何活动 There is no upcoming events!";
+                document.getElementById("information_2").innerHTML = additionalInformation;
             }
         } else {
             document.getElementById("information").innerHTML = "即将开始 Upcoming: <b>" + scheduledEvent + "</b>";
+                document.getElementById("information_2").innerHTML = additionalInformation;
         }
         }, 1000);
+
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const s = urlParams.get('s');
+        
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 2000);
+        };
+
+        if (s === "full"){
+            document.getElementById("coverbg").onclick = "";
+            document.getElementById("coverbg").style = "background-color: rgba(255, 255, 255, 0)";
+            document.getElementById("coverbg").innerHTML = "";
+            start();
+        } else {
+            setTimeout(function() {
+                document.getElementById("coverbg").innerHTML = "";
+                document.getElementById("coverbg").style = "background-color: rgba(255, 255, 255, 0)";
+            }, 3000);
+        }
+
+
     </script>
 
 </html>
