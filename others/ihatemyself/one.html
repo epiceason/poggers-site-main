@@ -23,7 +23,7 @@
             width: 100%;
             font-family: "Poppins", sans-serif;
             text-shadow: 0 0 3px #ffffff;
-            background: linear-gradient(-45deg, #5ac7f9, #5a85ad, #237cd5);
+            background: linear-gradient(-45deg, #88d9ff, #89bff1, #5392d1);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -49,8 +49,8 @@
         }
 
         .imageTwo {
-            top: 20px;
-            left: 150px;
+            top: 30px;
+            left: 300px;
             opacity: 0.4;
             z-index: 2;
             transition: all 0.5s ease;
@@ -61,7 +61,60 @@
             transition: all 0.5s ease;
         }
 
+        .imageThree {
+            top: 330px;
+            left: 500px;
+            opacity: 0.4;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .imageThree:hover {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .imageFour {
+            top: 150px;
+            left: 260px;
+            opacity: 0.4;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .imageFour:hover {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .imageFive {
+            top: 130px;
+            left: 370px;
+            opacity: 0.4;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .imageFive:hover {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .imageSix {
+            top: 240px;
+            left: 400px;
+            opacity: 0.4;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .imageSix:hover {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
         .about {
+            position: absolute;
             height: 80%;
             width: 80%;
             margin-left: 10%;
@@ -69,19 +122,57 @@
             padding: 30px;
             border-radius: 20px;
             background-color: white;
-            z-index: 98;
             overflow: hidden;
             visibility: hidden;
         }
 
         .exit {
             position: absolute;
-            z-index: 99;
             font-weight: bold;
             font-size: 40px;
-            left: 85%;
+            left: 95%;
             margin-top: -0.2%;
             color: red;
+        }
+
+        #church {
+            z-index: 50;
+        }
+
+        #church_close {
+            z-index: 51;
+        }
+
+        #two {
+            z-index: 55;
+        }
+
+        #two_close {
+            z-index: 56;
+        }
+
+        #three {
+            z-index: 60;
+        }
+  
+        #three_close {
+            z-index: 61;
+        }
+
+        #four {
+            z-index: 65;
+        }
+  
+        #four_close {
+            z-index: 66;
+        }
+
+        #five {
+            z-index: 70;
+        }
+  
+        #five_close {
+            z-index: 71;
         }
     </style>
 
@@ -91,9 +182,41 @@
             <h1 style="margin-bottom: 10px;">My name is chiki</h1>
             <hr style="margin-bottom: 10px;">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
-
         </div>
+        
+        <div class="about" id="two">
+            <div class="exit" id="two_close"><i class="fas fa-window-close"></i></div>
+            <h1 style="margin-bottom: 10px;">Two</h1>
+            <hr style="margin-bottom: 10px;">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+        </div>
+        
+        <div class="about" id="three">
+            <div class="exit" id="three_close"><i class="fas fa-window-close"></i></div>
+            <h1 style="margin-bottom: 10px;">Three</h1>
+            <hr style="margin-bottom: 10px;">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+        </div>
+        
+        <div class="about" id="four">
+            <div class="exit" id="four_close"><i class="fas fa-window-close"></i></div>
+            <h1 style="margin-bottom: 10px;">Four</h1>
+            <hr style="margin-bottom: 10px;">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+        </div>
+        
+        <div class="about" id="five">
+            <div class="exit" id="five_close"><i class="fas fa-window-close"></i></div>
+            <h1 style="margin-bottom: 10px;">Five</h1>
+            <hr style="margin-bottom: 10px;">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+        </div>
+        
         <div class="container">
+            <img class="imageSix image" id="five_icon" src="./data/unused.png"> 
+            <img class="imageFive image" id="four_icon" src="./data/unused.png"> 
+            <img class="imageFour image" id="three_icon" src="./data/unused.png"> 
+            <img class="imageThree image" id="two_icon" src="./data/unused.png"> 
             <img class="imageTwo image" id="church_icon" src="./data/church.png"> 
             <img class="imageOne image" src="./data/map.png"> 
         </div>
@@ -113,6 +236,14 @@
 
         var church_close = document.getElementById('church_close');
         var church_icon = document.getElementById('church_icon');
+        var two_close = document.getElementById('two_close');
+        var two_icon = document.getElementById('two_icon');
+        var three_close = document.getElementById('three_close');
+        var three_icon = document.getElementById('three_icon');
+        var four_close = document.getElementById('four_close');
+        var four_icon = document.getElementById('four_icon');
+        var five_close = document.getElementById('five_close');
+        var five_icon = document.getElementById('five_icon');
 
         // Church
         church_close.onclick = function() {
@@ -122,5 +253,45 @@
         church_icon.onclick = function() {
             open('church')
         };
+
+        // two
+        two_close.onclick = function() {
+            close('two')
+        };
+
+        two_icon.onclick = function() {
+            open('two')
+        };
+
+        // three
+        three_close.onclick = function() {
+            close('three')
+        };
+
+        three_icon.onclick = function() {
+            open('three')
+        };
+
+
+        // four
+        four_close.onclick = function() {
+            close('four')
+        };
+
+        four_icon.onclick = function() {
+            open('four')
+        };
+
+
+        // five
+        five_close.onclick = function() {
+            close('five')
+        };
+
+        five_icon.onclick = function() {
+            open('five')
+        };
+
+
     </script>
 </html>
