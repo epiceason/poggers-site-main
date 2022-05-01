@@ -2,8 +2,8 @@
 
 <html>
 
-    <meta content="Liveshow" property="og:title" />
-    <meta content="Better than that shit they made in 20 seconds, i made this in 2 minutes." property="og:description" />
+    <meta content="Liveshow | Poggers" property="og:title" />
+    <meta content="Properly made for no reason at all, the main goal is to shame ph" property="og:description" />
     <meta content="https://www.eason.ga/others/liveshow" property="og:url" />
     <meta content="https://media.discordapp.net/attachments/803156333486014518/958697188609900544/unknown.png" property="og:image" />
     <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
@@ -62,8 +62,8 @@
     <body>
         <div id="coverbg" onclick="window.location.replace('?s=full')" style="background-color: rgba(255, 255, 255, 0.765); text-align: center; padding-top: 25%; font-size: 35px;">Click on the page for the full experience<br>This message will automatically dissappear</div>
 
-        <audio id="player" autoplay loop>
-            <source src="/backend/music.mp3" type="audio/mp3">
+        <audio id="player" loop>
+            <source src="/backend/music.mp3" type="audio/mp3" >
         </audio>
 
         <div class="countdown" style="text-align: center;">
@@ -85,6 +85,14 @@
         var scheduledEventLink = "https://www.youtube.com/watch?v=gNn9NxZH2Vo";
 
         // Math and shit
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const s = urlParams.get('s');
+        
+        var audio = document.getElementById("player");
+        audio.volume = 0.3;
+
         var x = setInterval(function() {
 
         var now = new Date().getTime();
@@ -114,11 +122,6 @@
         }
         }, 1000);
 
-        
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const s = urlParams.get('s');
-        
         const start = () => {
             setTimeout(function() {
                 confetti.start()
@@ -130,12 +133,15 @@
             document.getElementById("coverbg").style = "background-color: rgba(255, 255, 255, 0)";
             document.getElementById("coverbg").innerHTML = "";
             start();
+            audio.play();
         } else {
             setTimeout(function() {
                 document.getElementById("coverbg").innerHTML = "";
                 document.getElementById("coverbg").style = "background-color: rgba(255, 255, 255, 0)";
             }, 3000);
         }
+
+
 
 
     </script>
