@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Poggers</title>
+        <link rel="icon" type="image/x-icon" href="/backend/main.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+    </head>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            display: inline-flex;
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            text-shadow: 0 0 3px #ffffff;
+            background: linear-gradient(-45deg, #5ac7f9, #5a85ad, #237cd5);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .container {
+            top: 30%;
+            left: 35%;
+            position: absolute;
+        }
+
+        .image {
+            position: absolute;
+        }
+
+        .imageOne {
+            z-index: 1;
+        }
+
+        .imageTwo {
+            top: 20px;
+            left: 150px;
+            opacity: 0.4;
+            z-index: 2;
+            transition: all 0.5s ease;
+        }
+
+        .imageTwo:hover {
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .about {
+            height: 80%;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 5%;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: white;
+            z-index: 98;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .exit {
+            position: absolute;
+            z-index: 99;
+            font-weight: bold;
+            font-size: 40px;
+            margin-left: 75%;
+            margin-top: -0.2%;
+            color: red;
+        }
+    </style>
+
+    <body>
+        <div class="about" id="church">
+            <div class="exit" id="church_close"><i class="fas fa-window-close"></i></div>
+            <h1 style="margin-bottom: 10px;">My name is chiki</h1>
+            <hr style="margin-bottom: 10px;">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+
+        </div>
+        <div class="container">
+            <img class="imageTwo image" id="church_icon" src="./data/church.png"> 
+            <img class="imageOne image" src="./data/map.png"> 
+        </div>
+    </body>
+
+    <script>
+
+        function open(thing){
+            var thing = document.getElementById(thing);
+            thing.style.visibility = "visible";
+        }
+
+        function close(thing){
+            var thing = document.getElementById(thing);
+            thing.style.visibility = "hidden";
+        }
+
+        var church_close = document.getElementById('church_close');
+        var church_icon = document.getElementById('church_icon');
+
+        // Church
+        church_close.onclick = function() {
+            close('church')
+        };
+
+        church_icon.onclick = function() {
+            open('church')
+        };
+    </script>
+</html>
