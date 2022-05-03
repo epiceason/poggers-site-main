@@ -111,10 +111,10 @@ body {
   color: #ffffff;
 }
 
-.wrapper .osu:hover,
-.wrapper .osu:hover .tooltip,
-.wrapper .osu:hover .tooltip::before {
-  background-color: #cc4698;
+.wrapper .about:hover,
+.wrapper .about:hover .tooltip,
+.wrapper .about:hover .tooltip::before {
+  background-color: #46f672;
   color: #ffffff;
 }
 
