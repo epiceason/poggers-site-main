@@ -8,12 +8,14 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code')
+    const short_code = urlParams.get('c')
     
     async function redirect() {
 
             if (code === "rickroll") {
-                window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-                return
+                window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            } else if (short_code === "onigiri") {
+                window.location.replace("https://img.freepik.com/premium-vector/cute-kawaii-peach-onigiri-love_8319-849.jpg?w=2000")
             } else {
                 window.location.replace("/")
             }
