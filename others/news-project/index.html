@@ -6,22 +6,40 @@
   </head>
 
   <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+
     html,
     body {
+      font-family: 'Noto Sans SC', serif;
       background-color: #ffe6e6;
     }
 
     .menu {
-      position: absolute;
+      position: fixed;
       font-size: 3.5vh;
       padding-top: 1vh;
       padding-left: 2vh;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 6vh;
+      height: 7vh;
       background-color: #FF5D5D;
       overflow-x: hidden;
+      z-index: 1;
+    }
+
+    .menu-bottom {
+      position: absolute;
+      font-size: 2.6vh;
+      padding-top: 8.4vh;
+      padding-left: 2vh;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 4.7vh;
+      background-color: #e30000;
+      overflow-x: hidden;
+      z-index: 0;
     }
 
     .news-source {
@@ -47,9 +65,31 @@
       background-color: #ffcaca;
       margin-bottom: 1vh;
     }
+    
+    .snackbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 104vw;
+      height: 5vh;
+      background-color: #ffffff;
+      overflow: visible;
+    }
 
-    .bg1 {
-      background-image: url("https://i0.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2019/09/image1.jpg?fit=1432%2C573&ssl=1");
+    .snackbar-inner {
+      border-radius: 0.5vh;
+      position: absolute;
+      left: -5vw;
+      width: 18vw;
+      height: 4.45vh;
+      padding-left: 5vh;
+      background-color: #ff3939;
+      z-index: 2;
+    }
+
+    .size-1 {
+      padding-top: 0.9vh;
+      font-size: 2.5vh;
     }
 
     a {
@@ -61,11 +101,12 @@
 
   <body>
     <div class="menu">📰 <font size="8"><b>天天日报</b></font></div>
-    <div style="padding-top: 10vh;"></div>
+    <div class="menu-bottom"> <font style="color: white"><a href="./topic/1">国内</a></font> | <a href="./topic/2">国际</a> | <a href="./topic/3">社会</a> | 地方 | 娱乐 | 更多...</div>
+    <div style="padding-top: 14vh;"></div>
     <div class="news-source">
         <div class="title">国内📍</div>
         <a href="./1.html">
-            <div class="topics bg1">
+            <div class="topics">
                 <b>震惊！</b>马来西亚前游泳健将XXX<br>死亡真相暴露!<br>
                 <small>真相让家属感到痛心</small>
             </div>
@@ -74,6 +115,42 @@
             <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
             <small>小编只好吃裸体阔送</small>
         </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+        <div class="topics">
+            <b>完蛋！</b>鸡蛋价格暴涨，裸体炸奶大哥无法卖出裸体特洛<br>
+            <small>小编只好吃裸体阔送</small>
+        </div>
+    </div>
+    <div class="snackbar">
+        <div class="snackbar-inner size-1"><b>快讯</b></div>
+        <marquee class="size-1" direction="left">Balls</marquee>
     </div>
   </body>
 
