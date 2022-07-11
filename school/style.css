@@ -7,11 +7,20 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
 .sticky {
     position: sticky;
 }
 
 /* Actual CSS */
+.mobile-block {
+    visibility: hidden;
+}
+
 .header {
     position: fixed;
     font-size: 2vh;
@@ -25,7 +34,7 @@ body {
     text-decoration: none;
     list-style-type: none;
     overflow: hidden;
-    z-index: 99;
+    z-index: 50;
 }
 
 
@@ -41,6 +50,11 @@ body {
 }
   
 .header-button {
+    float: left;
+    transition: all 0.5s;
+}
+
+.header-event {
     float: left;
     transition: all 0.5s;
 }
@@ -62,13 +76,32 @@ body {
     padding-top: 2vh;
     text-decoration: none;
 }
-  
+
 .header-button .link:hover:not(.active) {
     color: rgb(0, 0, 0);
     font-weight: bold;
     transition: all 0.2s;
 }
   
+.header-event .event-title {
+    font-size: 1.3vh;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-right: 0.2vw;
+    padding-top: 2vh;
+    text-decoration: none;
+}
+  
+.header-event .event {
+    font-size: 1.3vh;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-right: 1vw;
+    padding-top: 2vh;
+    text-decoration: none;
+}
+
 .active {
     color: #550000;
 }
@@ -138,6 +171,53 @@ hr {
     transition: all 0.2s;
 }
 
+
+/* News */
+.title {
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.article-title {
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.article-content {
+    font-size: 1.5vh;
+}
+
+.article-banner {
+    font-size: 1.5vh;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    text-shadow: 1px 0px #ffffff;
+    padding: 2vw 2vw 2vw 2vw;
+    width: 90vw;
+    background-color: #ffffff;
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+}
+
+.ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 11vh;
+    background-color: #ffffff;
+    text-shadow: 1.5px 1.5px #ffffff;
+    overflow: visible;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    font-size: 1.5vh;
+    background-image: url('./src/free-robux.png');
+    background-size: cover;
+    z-index: 98;
+}
+
 /* Attributes */
 .float-right {
     float: right;
@@ -153,4 +233,21 @@ hr {
 
 .empty-right {
     padding-right: 1vw;
+}
+
+
+@media only screen and (max-width: 980px) {
+    .mobile-block {
+        position: fixed;
+        font-size: 5vh;
+        text-align: center;
+        padding-top: 50vh;
+        top: 0;
+        left: 0;
+        width: 130vw;
+        height: 100vh;
+        background-color:rgb(255, 255, 255);
+        z-index: 99;
+        visibility: visible;
+    }
 }
