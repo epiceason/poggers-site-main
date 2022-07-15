@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>🏫 School</title>
+        <link rel="stylesheet" href="/en/style.css">
+        <link rel="icon" type="image/x-icon" href="/en/kian_ong.ico">
+        <script src="https://kit.fontawesome.com/e41121c942.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="mobile-block">This site is not available on mobile<br><small>Violation of Screen Size Policy</small><br><br><br><a class="content-link" href="https://www.eason.ga/r?code=rickroll">[ Return ]</a></div>
+        <div class="header sticky">
+            <ul class="header-button-parent">
+                <li class="header-button"><a class="icon" href="/en/">Poggers</a></li>
+                <li class="header-button empty-right">|</li>
+                <li class="header-button"><a class="link" href="/en/news/">News</a></li>
+                <li class="header-button"><a class="link" href="/en/events/">Events</a></li>
+                <li class="header-button"><a class="link" href="/en/vault/">Vault</a></li>
+                <li class="header-button float-right empty-right"><a class="link" href="/en/about/">About</a></li>
+                <li class="header-button empty-right float-right">|</li>
+                <li class="header-event float-right"><a id="event-countdown" class="event" href="/en/events/#exam-countdown">Loading...</a></li>
+                <li class="header-event float-right"><a class="event-title" href="/en/events/#exam-countdown">📢 Second Semester First Exam</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <a class="title">Events</a>
+            <center>
+                <h1>📃 Second Semester First Exam</h1>
+                <h2 id="event-countdown-2">Loading...</h2>
+            </center>
+        </div>
+    </body>
+
+    <script>
+        // Configuration
+        var countDownDate = new Date("8/2/2022 12:00 AM").getTime();
+        var scheduledEvent = "Second Semester Exams";
+        var additionalInformation = "";
+        var scheduledEventLink = "";
+
+        // Math and shit
+        var x = setInterval(function() {
+
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("event-countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s "
+        
+        document.getElementById("event-countdown-2").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s "
+        
+        }, 1000);
+    </script>
+</html>
