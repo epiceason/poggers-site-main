@@ -238,6 +238,14 @@ hr {
     font-weight: bold;
 }
 
+.subtitle {
+    font-size: 2vh;
+}
+
+.act-content{
+    font-size: 1.5em;
+}
+
 .article-title {
     font-size: 2vh;
     font-weight: bold;
@@ -245,6 +253,18 @@ hr {
 
 .article-content {
     font-size: 1.5vh;
+}
+
+.hidden-text {
+    color: rgb(44, 44, 44);
+    background-color: rgb(44, 44, 44);
+    transition: all 0.2s;
+}
+
+.hidden-text:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(157, 0, 0);
+    transition: all 0.2s;
 }
 
 .article-banner {
@@ -295,6 +315,13 @@ hr {
     padding-right: 1vw;
 }
 
+.margin-3 {
+    margin-top: 3vh;
+}
+
+.disabled {
+    pointer-events: none;
+}
 
 @media only screen and (max-width: 980px) {
     .mobile-block {
