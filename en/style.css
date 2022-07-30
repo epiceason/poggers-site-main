@@ -323,6 +323,16 @@ hr {
     pointer-events: none;
 }
 
+.download {
+    color:rgb(0, 82, 100);
+    transition: all 0.2s;
+}
+
+.download:hover {
+    color:rgb(0, 190, 200);
+    transition: all 0.2s;
+}
+
 @media only screen and (max-width: 980px) {
     .mobile-block {
         position: fixed;
